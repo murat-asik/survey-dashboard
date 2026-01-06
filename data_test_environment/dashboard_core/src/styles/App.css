@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+.app-header {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.025em;
+    text-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+}
+
+.selectors {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.app-main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1800px;
+    /* Harita için daha geniş alan */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.loading-message,
+.error-message,
+.info-message {
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading-message {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+.error-message {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+    color: #fca5a5;
+    border-color: #dc2626;
+}
+
+.error-message p {
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+}
+
+.error-detail {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+    margin-top: 1rem;
+}
+
+.info-message {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    color: var(--text-secondary);
+}
+
+.info-message h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.info-message ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-message li {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.data-format-info {
+    margin-top: 1.5rem;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selected-months-info {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.selected-months-info strong {
+    color: var(--text-primary);
+    margin-right: 0.5rem;
+}
+
+.month-count {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+}
+
+.app-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.footer-content-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-center {
+    margin: 0;
+    text-align: center;
+}
+
+.footer-right {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .app-title {
+        font-size: 1.25rem;
+    }
+
+    .selectors {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .app-main {
+        padding: 1rem;
+    }
+}
